@@ -13,5 +13,7 @@
       .row
         = render 'layouts/messages'
       .row
-        .col-md-12
+        .col-md-2
+          = yield :rightnav
+        .col-md-10
           = yield

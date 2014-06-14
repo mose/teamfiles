@@ -1,4 +1,4 @@
-# == Route Map (Updated 2014-06-15 01:07)
+# == Route Map (Updated 2014-06-15 02:25)
 #
 #                   Prefix Verb   URI Pattern                    Controller#Action
 #         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
@@ -16,22 +16,24 @@
 #                          PATCH  /users(.:format)               devise/registrations#update
 #                          PUT    /users(.:format)               devise/registrations#update
 #                          DELETE /users(.:format)               devise/registrations#destroy
-#                    pages GET    /pages(.:format)               pages#index
-#                          POST   /pages(.:format)               pages#create
-#                 new_page GET    /pages/new(.:format)           pages#new
-#                edit_page GET    /pages/:id/edit(.:format)      pages#edit
-#                     page GET    /pages/:id(.:format)           pages#show
-#                          PATCH  /pages/:id(.:format)           pages#update
-#                          PUT    /pages/:id(.:format)           pages#update
-#                          DELETE /pages/:id(.:format)           pages#destroy
-#                     root GET    /                              pages#index
+#                     root GET    /                              items#index
+#                    items GET    /items(.:format)               items#index
+#                          POST   /items(.:format)               items#create
+#                 new_item GET    /items/new(.:format)           items#new
+#                edit_item GET    /items/:id/edit(.:format)      items#edit
+#                     item GET    /items/:id(.:format)           items#show
+#                          PATCH  /items/:id(.:format)           items#update
+#                          PUT    /items/:id(.:format)           items#update
+#                          DELETE /items/:id(.:format)           items#destroy
+#                     page GET    /:name(.:format)               pages#show
 #
 
 Rails.application.routes.draw do
   devise_for :users
 
+  root to: 'items#index'
+  resources :items
   get ':name' => 'pages#show', as: 'page'
-  root to: 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

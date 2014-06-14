@@ -1,0 +1,6 @@
+- content_for :rightnav do
+  - @files.each do |file|
+    = file.name
+
+%div
+  = link_to "Upload", new_item_path, class: 'submit'
