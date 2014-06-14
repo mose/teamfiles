@@ -43,4 +43,6 @@ gem 'spring',        group: :development
 
 group :development do
   gem 'html2haml'
+  gem 'quiet_assets'
+  gem 'annotate'
 end

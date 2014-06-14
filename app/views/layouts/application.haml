@@ -1,9 +1,17 @@
 !!!
 %html
   %head
-    %title Teamfiles
+    %title= content_for?(:title) ? yield(:title) : "Teamfiles"
+    %meta{ name: 'description', content: "#{content_for?(:description) ? yield(:description) : 'Files sharing for teams'}" }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    %header= render 'layouts/navigation'
+    .container.main
+      .row
+        = render 'layouts/messages'
+      .row
+        .col-md-12
+          = yield

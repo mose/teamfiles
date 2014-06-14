@@ -1,0 +1,13 @@
+.navbar.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+        %span.sr-only Toggle
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'Home', root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li= link_to 'Help', page_path('help')
+        %li= link_to 'About', page_path('about')
