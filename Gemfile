@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.1'
 
 gem 'haml-rails'
 
-gem 'devise'
+# gem 'devise'
 gem 'plupload-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
