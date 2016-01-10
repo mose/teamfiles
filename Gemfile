@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.1'
 
 gem 'haml-rails'
 
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # gem 'devise'
 gem 'plupload-rails'
 
